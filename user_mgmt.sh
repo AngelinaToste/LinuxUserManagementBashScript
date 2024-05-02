@@ -11,12 +11,28 @@ create_user(){
     homedir=$5
     shell=$6
 
+    echo "Input: '$username', '$password'"
     #create user with specified user name
     
-    sudo useradd -m -s /bin/bash $username
+    if [ -z $password ]; then
+        $password="default"
+    elif [ -z $UID ]; then
+        $UID=1000
+    elif [ -z $GID ]; then
+        $GID=1000
+    elif [ -z $homedir ]; then
+        $homedir="/home/${$username}"
+    elif [ -z $shell ]; then
+        $shell="/bin/bas"
+    fi
+
+    #create user
+    sudo useradd $username
 
     #setting the password for the user
     echo "$username:$password" | sudo chpasswd
+
+    #set UID for the user
 
     echo "The user '$username' has been created with the password '$password'"
 
@@ -45,28 +61,23 @@ delete_user(){
 
 }
 
-manage_user(){
-    action=$1
-    username=$2
-    password=$3
-    
-    
-    
-    #this function will allow management of a specified user account 
-    # the command will require the username, password, and the action (create,  display, delete)
+create_user bob password123
 
-    if [[ $action == "create" ]]; then 
-        if [[ -n "$password" ]]; then
-            create_user $username $password
-        fi
-    elif [[ $action == "display" ]]; then 
-        display_user $username
-    elif [[ $action == "delete" ]]; then 
-        delete_user $username
-    else
-        echo "Please specify a command (create, display, delete)"
+#this function will allow management of a specified user account 
+# the command will require the username, password, and the action (create,  display, delete)
+
+if [[ $1 == "create" ]]; then 
+    if [[ -n "$3" ]]; then
+        create_user $2 $3
     fi
-}
+elif [[ $1 == "display" ]]; then 
+    display_user $2
+elif [[ $1 == "delete" ]]; then 
+    delete_user $2
+else
+    echo "Please specify a command (create, display, delete)"
+fi
+
 
 
 
