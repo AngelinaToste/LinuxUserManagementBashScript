@@ -1,0 +1,53 @@
+
+
+Input: 'bobbydarin', 'Sea123', '/home/bobbydarin', '/bin/bash'
+The user, 'bobbydarin', has been created.
+
+Input: 'seal', 'Rose123', '/home/seal', '/bin/bash'
+The user, 'seal', has been created.
+
+Input: 'FrankSinatra', 'NewYork123', '/home/FrankSinatra', '/bin/bash'
+The user, 'FrankSinatra', has been created.
+
+Here is the information for the user 'bobbydarin'
+uid=1002(bobbydarin) gid=1002(bobbydarin) groups=1002(bobbydarin)
+
+Here is the home directory for the user 'bobbydarin'
+/home/bobbydarin
+
+Here is the shell for the user 'bobbydarin'
+/bin/bash
+
+Here is the information for the user 'seal'
+uid=1003(seal) gid=1003(seal) groups=1003(seal)
+
+Here is the home directory for the user 'seal'
+/home/seal
+
+Here is the shell for the user 'seal'
+/bin/bash
+
+Here is the information for the user 'FrankSinatra'
+uid=1004(FrankSinatra) gid=1004(FrankSinatra) groups=1004(FrankSinatra)
+
+Here is the home directory for the user 'FrankSinatra'
+/home/FrankSinatra
+
+Here is the shell for the user 'FrankSinatra'
+/bin/bash
+
+Input: 'bobbydarin', 'password', '/home/bobbydarin', '/bin/bash'
+useradd: user 'bobbydarin' already exists
+There was an error in creating the specified user.
+
+Here is the information for the user 'louisArmstrong'
+
+id: ‘louisArmstrong’: no such user
+The specified user does not exist.
+
+The username 'seal' has been deleted.
+
+The username 'FrankSinatra' has been deleted.
+
+The username 'bobbydarin' has been deleted.
+
